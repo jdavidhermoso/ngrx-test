@@ -1,4 +1,4 @@
-import { createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { LoginActions, LoginActionTypes } from '../actions';
 
 export const initialState: UserSessionState = {
@@ -35,7 +35,7 @@ export function userSessionReducer(state = initialState, action: LoginActions): 
   }
 }
 
-const selectUserSession = (appState: AppState) => appState.userSession;
+export const selectUserSession = createFeatureSelector<AppState, UserSessionState>('userSession');
 
 export const getIsUserLoggedIn = createSelector(
   selectUserSession,
