@@ -28,5 +28,6 @@ export class Logout implements Action {
 
 export type LoginActions = LoginRequest
   | LoginSuccess
-  | LoginFailed;
+  | LoginFailed
+  | Logout;
 

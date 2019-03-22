@@ -7,7 +7,7 @@
   </a>
 </div>
 
-<app-login-form></app-login-form>
-<app-logout></app-logout>
+<app-login-form *ngIf="!(isUserLoggedIn | async)"></app-login-form>
+<app-logout *ngIf="isUserLoggedIn | async"></app-logout>
 
 <router-outlet></router-outlet>
