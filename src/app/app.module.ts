@@ -5,9 +5,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
-import { reducer } from './reducers';
-import { LoginFormComponent } from './components';
-import { LogoutComponent } from './components/logout/logout.component';
+import { LoginFormComponent, LogoutComponent } from './components';
+import { userSessionReducer } from './reducers';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,9 @@ import { LogoutComponent } from './components/logout/logout.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ appState: reducer }),
+    StoreModule.forRoot({
+      userSession: userSessionReducer
+    }),
     StoreDevtoolsModule.instrument({
       maxAge: 5
     }),

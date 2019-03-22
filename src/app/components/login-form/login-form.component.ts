@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { LoginRequest } from '../../actions';
-import { LoginUserData } from '../../models/login-user-data.model';
-import { AppState } from '../../reducers';
+import { LoginUserData } from '../../models';
+import { UserSessionState } from '../../reducers';
 
 @Component({
   selector: 'app-login-form',
@@ -15,7 +15,7 @@ export class LoginFormComponent implements OnInit {
   public userNameFormControl: FormControl = new FormControl();
   public passwordFormControl: FormControl = new FormControl();
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<UserSessionState>) {
   }
 
   public ngOnInit(): void {
