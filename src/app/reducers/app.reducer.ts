@@ -11,10 +11,17 @@ export const initialState: AppState = {
 export function reducer(state = initialState, action: LoginActions): AppState {
   switch (action.type) {
 
-    case LoginActionTypes.LoginSuccess: {
+    case LoginActionTypes.LoginRequest: {
       return {
         ...state,
         isUserLoggedIn: true
+      };
+    }
+
+    case LoginActionTypes.Logout: {
+      return {
+        ...state,
+        isUserLoggedIn: false
       };
     }
 
