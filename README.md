@@ -2,6 +2,9 @@
 
 Project to teach / illustrate how to set up an NGRX Angular project.
 
+### Important links to read
+https://ngrx.io/guide/store
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Development server
