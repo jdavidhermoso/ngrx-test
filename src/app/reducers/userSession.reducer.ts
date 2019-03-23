@@ -35,7 +35,7 @@ export function userSessionReducer(state = initialState, action: LoginActions): 
   }
 }
 
-export const selectUserSession = createFeatureSelector<AppState, UserSessionState>('userSession');
+export const selectUserSession = createFeatureSelector<UserSessionState>('userSession');
 
 export const getIsUserLoggedIn = createSelector(
   selectUserSession,
