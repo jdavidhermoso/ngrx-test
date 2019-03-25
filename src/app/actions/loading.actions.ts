@@ -7,10 +7,19 @@ export enum LoadingActionTypes {
 
 export class AppLoadingStart implements Action {
   readonly type = LoadingActionTypes.AppLoadingStart;
+
+  constructor() {
+    console.log('App loading start!')
+  }
 }
 
 export class AppLoadingEnd implements Action {
   readonly type = LoadingActionTypes.AppLoadingEnd;
+
+
+  constructor() {
+    console.log('App loading end!')
+  }
 }
 
 export type LoadingActions = AppLoadingStart

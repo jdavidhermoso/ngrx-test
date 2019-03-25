@@ -4,7 +4,7 @@ import { LoginUserData } from '../models';
 export enum LoginActionTypes {
   LoginRequest = '[Login Page] LoginRequest',
   LoginSuccess = '[Login Page] LoginSuccess',
-  LoginFailed = '[Login Page] LoginFailed',
+  LoginFail = '[Login Page] LoginFail',
   Logout = '[Login Page] Logut',
 }
 
@@ -24,7 +24,7 @@ export class LoginSuccess implements Action {
 }
 
 export class LoginFailed implements Action {
-  readonly type = LoginActionTypes.LoginFailed;
+  readonly type = LoginActionTypes.LoginFail;
 
   constructor(public payload: Error) {}
 }

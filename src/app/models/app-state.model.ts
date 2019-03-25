@@ -1,8 +1,9 @@
-import { City } from './city.model';
+import { DataState } from './data-state.model';
+import { LoadingState } from './loading-state.model';
 import { UserSessionState } from './user-session-state.model';
 
 export interface AppState {
-  isAppLoading: boolean;
+  loading: LoadingState;
   userSession: UserSessionState;
-  cities: City[]
+  data: DataState;
 }

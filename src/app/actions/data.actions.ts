@@ -24,8 +24,7 @@ export class CitiesRequestSuccess implements Action {
 export class CitiesRequestFail implements Action {
   readonly type = DataActionTypes.CitiesRequestFail;
 
-  constructor(public payload: Error) {
-  }
+  constructor(public payload: Error) {}
 }
 
 export type DataActions = CitiesRequest

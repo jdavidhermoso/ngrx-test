@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs/internal/Observable';
+import { LoadingState } from '../../models';
+import { getIsAppLoading } from '../../reducers';
 
 @Component({
   selector: 'app-loader',
@@ -6,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent implements OnInit {
+  public isAppLoading: Observable<boolean>;
 
-  constructor() { }
+  constructor(private store: Store<LoadingState>) {}
 
-  ngOnInit() {
+  public ngOnInit(): void {
+    this.isAppLoading = this.store.pipe(select(getIsAppLoading));
   }
-
 }
