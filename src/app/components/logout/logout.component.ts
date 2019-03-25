@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Logout } from '../../actions';
-import { UserSessionState } from '../../reducers';
+import { UserSessionState } from '../../models';
 
 @Component({
   selector: 'app-logout',
@@ -10,7 +10,8 @@ import { UserSessionState } from '../../reducers';
 })
 export class LogoutComponent {
 
-  constructor(private store: Store<UserSessionState>) { }
+  constructor(private store: Store<UserSessionState>) {
+  }
 
   public onLogoutClicked() {
     this.store.dispatch(new Logout());

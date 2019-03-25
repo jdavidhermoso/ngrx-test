@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { getIsUserLoggedIn, AppState } from './reducers';
+import { AppState } from './models';
+import { getIsUserLoggedIn } from './reducers';
 
 @Component({
   selector: 'app-root',

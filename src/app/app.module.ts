@@ -7,33 +7,38 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginFormComponent, LogoutComponent } from './components';
-import { LoginEffects } from './effects/login.effects';
+import { LoginFormComponent, LogoutComponent, SomeComponentComponent, LoaderComponent } from './components';
+import { DataEffects, LoginEffects } from './effects';
 import { userSessionReducer } from './reducers';
-import { LoginService } from './services';
+import { dataReducer } from './reducers';
+import { DataService, LoginService } from './services';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
-    LogoutComponent
+    LogoutComponent,
+    LoaderComponent,
+    SomeComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      userSession: userSessionReducer
+      userSession: userSessionReducer,
+      data: dataReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 5
     }),
     FormsModule,
     ReactiveFormsModule,
-    EffectsModule.forRoot([LoginEffects]),
+    EffectsModule.forRoot([LoginEffects, DataEffects]),
     HttpClientModule,
   ],
   providers: [
-    LoginService
+    LoginService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })
