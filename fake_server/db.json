@@ -2,5 +2,22 @@
   "login": {
     "username": "",
     "password": ""
-  }
+  },
+  "cities": [
+    {
+      "iata": "PMI",
+      "city": "Palma de Mallorca",
+      "country": "Spain"
+    },
+    {
+      "iata": "MAD",
+      "city": "Madrid",
+      "country": "Spain"
+    },
+    {
+      "iata": "BCN",
+      "city": "Barcelona",
+      "country": "Spain"
+    }
+  ]
 }

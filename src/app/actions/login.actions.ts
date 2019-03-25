@@ -20,19 +20,13 @@ export class LoginSuccess implements Action {
     return new LoginSuccess();
   }
 
-  constructor() {
-    console.log('success!');
-  }
-
   readonly type = LoginActionTypes.LoginSuccess;
 }
 
 export class LoginFailed implements Action {
   readonly type = LoginActionTypes.LoginFailed;
 
-  constructor(public payload: Error) {
-    console.log(payload);
-  }
+  constructor(public payload: Error) {}
 }
 
 export class Logout implements Action {

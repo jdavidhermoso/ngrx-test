@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { LoginRequest } from '../../actions';
-import { LoginUserData } from '../../models';
-import { UserSessionState } from '../../reducers';
+import { LoginUserData, UserSessionState } from '../../models';
 
 @Component({
   selector: 'app-login-form',

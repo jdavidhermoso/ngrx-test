@@ -1,19 +1,12 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { LoginActions, LoginActionTypes } from '../actions';
+import { UserSessionState } from '../models';
 
-export const initialState: UserSessionState = {
+export const initialUserSessionState: UserSessionState = {
   isUserLoggedIn: false
 };
 
-export interface UserSessionState {
-  isUserLoggedIn: boolean;
-}
-
-export interface AppState {
-  userSession: UserSessionState;
-}
-
-export function userSessionReducer(state = initialState, action: LoginActions): UserSessionState {
+export function userSessionReducer(state = initialUserSessionState, action: LoginActions): UserSessionState {
   switch (action.type) {
 
     case LoginActionTypes.LoginSuccess: {
@@ -31,7 +24,7 @@ export function userSessionReducer(state = initialState, action: LoginActions): 
     }
 
     default:
-      return initialState;
+      return state;
   }
 }
 

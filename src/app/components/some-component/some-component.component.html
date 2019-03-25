@@ -1,0 +1,24 @@
+<table>
+  <thead>
+  <tr>
+    <th>Iata Code</th>
+    <th>City</th>
+    <th>Country</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let city of cities | async">
+    <td>
+      {{city.iata}}
+    </td>
+    <td>
+      {{city.city}}
+    </td>
+    <td>
+      {{city.country}}
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+

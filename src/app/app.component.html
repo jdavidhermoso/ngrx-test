@@ -10,4 +10,10 @@
 <app-login-form *ngIf="!(isUserLoggedIn | async)"></app-login-form>
 <app-logout *ngIf="isUserLoggedIn | async"></app-logout>
 
+<div class="some__private-content" *ngIf="isUserLoggedIn | async">
+  This content in only available for logged in users
+  
+  <app-some-component></app-some-component>
+</div>
+
 <router-outlet></router-outlet>
