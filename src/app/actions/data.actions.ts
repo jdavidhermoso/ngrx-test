@@ -4,7 +4,8 @@ import { City } from '../models';
 export enum DataActionTypes {
   CitiesRequest = '[Data] Cities request',
   CitiesRequestSuccess = '[Data] Cities request Success',
-  CitiesRequestFail = '[Data] Cities request Failed'
+  CitiesRequestFail = '[Data] Cities request Failed',
+  DataReset = '[Data] Reset'
 }
 
 export class CitiesRequest implements Action {
@@ -25,6 +26,10 @@ export class CitiesRequestFail implements Action {
   readonly type = DataActionTypes.CitiesRequestFail;
 
   constructor(public payload: Error) {}
+}
+
+export class DataReset implements Action {
+  readonly type = DataActionTypes.DataReset;
 }
 
 export type DataActions = CitiesRequest
