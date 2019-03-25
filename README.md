@@ -1,6 +1,7 @@
 # NgrxExample
 
-Project to teach / illustrate how to set up an NGRX Angular project.
+This project is an example of how to set up a basic NGRX configuration. I made it to help a team mate to understand how NGRX setup works.
+I have probably missed some good practises, but I wanted to make a quick example. 
 
 ### Important links to read
 https://ngrx.io/guide/store
