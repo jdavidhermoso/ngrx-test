@@ -22,7 +22,8 @@ export class LoginFormComponent implements OnInit {
     this.buildForm();
   }
 
-  public onLoginClicked(): void {
+  public onLoginClicked(evt): void {
+    evt.preventDefault();
     const loginUserData: LoginUserData = {
       username: this.userNameFormControl.value,
       password: this.passwordFormControl.value

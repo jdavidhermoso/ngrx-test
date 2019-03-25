@@ -16,7 +16,7 @@ export interface AppState {
 export function userSessionReducer(state = initialState, action: LoginActions): UserSessionState {
   switch (action.type) {
 
-    case LoginActionTypes.LoginRequest: {
+    case LoginActionTypes.LoginSuccess: {
       return {
         ...state,
         isUserLoggedIn: true

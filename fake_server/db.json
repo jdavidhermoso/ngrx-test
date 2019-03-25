@@ -1,5 +1,6 @@
 {
   "login": {
-    "canLogin": true
+    "username": "",
+    "password": ""
   }
 }
