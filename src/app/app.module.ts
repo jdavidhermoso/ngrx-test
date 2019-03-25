@@ -1,4 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,8 +8,8 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginFormComponent, LogoutComponent, SomeComponentComponent, LoaderComponent } from './components';
 import { DataEffects, LoginEffects } from './effects';
-import { userSessionReducer } from './reducers';
-import { dataReducer } from './reducers';
+import { LoadingEffects } from './effects/loading.effects';
+import { userSessionReducer, dataReducer, loadingReducer } from './reducers';
 import { DataService, LoginService } from './services';
 
 @NgModule({
@@ -26,15 +25,15 @@ import { DataService, LoginService } from './services';
     AppRoutingModule,
     StoreModule.forRoot({
       userSession: userSessionReducer,
-      data: dataReducer
+      data: dataReducer,
+      loading: loadingReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 5
     }),
     FormsModule,
     ReactiveFormsModule,
-    EffectsModule.forRoot([LoginEffects, DataEffects]),
-    HttpClientModule,
+    EffectsModule.forRoot([LoginEffects, DataEffects, LoadingEffects])
   ],
   providers: [
     LoginService,
